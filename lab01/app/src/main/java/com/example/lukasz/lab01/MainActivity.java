@@ -19,8 +19,10 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonChangeText = (Button) findViewById(R.id.changeTextButton);
         final Button secondActivityButton = (Button) findViewById(R.id.second_activity_button);
         final EditText editText   = (EditText) findViewById(R.id.editTextField);
+        final Button listViewButton = (Button) findViewById(R.id.list_view_activity_button);
 
         final Intent secondActivityIntent = new Intent(this, SecondActivity.class);
+        final Intent listViewActivityIntent = new Intent(this, ListViewActivity.class);
 
         buttonChangeText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,5 +40,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        listViewButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(listViewActivityIntent);
+            }
+        });
     }
 }
