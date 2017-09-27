@@ -1,5 +1,6 @@
 package com.example.lukasz.lab01;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,10 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView textView = (TextView) findViewById(R.id.textView);
         final Button buttonChangeText = (Button) findViewById(R.id.changeTextButton);
+        final Button secondActivityButton = (Button) findViewById(R.id.second_activity_button);
         final EditText editText   = (EditText) findViewById(R.id.editTextField);
+
+        final Intent secondActivityIntent = new Intent(this, SecondActivity.class);
 
         buttonChangeText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,5 +29,14 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText("Name: " + text);
             }
         });
+
+        secondActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                secondActivityIntent.putExtra("name", editText.getText().toString());
+                startActivity(secondActivityIntent);
+            }
+        });
+
     }
 }
