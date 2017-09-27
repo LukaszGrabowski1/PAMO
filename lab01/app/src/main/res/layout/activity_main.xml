@@ -20,10 +20,20 @@
         android:id="@+id/changeTextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="Change text"
+        android:layout_below="@+id/editTextField"
+        android:layout_alignStart="@+id/editTextField" />
+
+    <EditText
+        android:id="@+id/editTextField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
         android:layout_below="@+id/textView"
         android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="32dp"
-        android:text="Change text"/>
+        android:layout_marginTop="43dp" />
 
 
 </RelativeLayout>
